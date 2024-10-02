@@ -182,6 +182,50 @@ function exo3(){
     }
 }
 
+function exo4(){
+
+    // Saisir les scores
+    /*
+    n1 = parseInt(prompt("Saisir le premier score"))
+    n2 = parseInt(prompt("Saisir le second score"))
+    n3 = parseInt(prompt("Saisir le troisième score"))
+    n4 = parseInt(prompt("Saisir le quatrième score"))
+    n5 = parseInt(prompt("Saisir le cinquième score"))
+
+    tab = [n1, n2, n3, n4, n5];
+    */
+
+    
+    let score;
+    tab = [];
+
+    // Saisie des scores, avec un nombre de score indéfini
+    while(score != ""){
+        score = prompt("Saisir un score (Entrer pour arreter la saisie)")
+        tab.push(parseInt(score));
+    }
+
+    let max = tab[0];
+    let sum = 0;
+
+    // Suppression de la dernière valeur du tableau qui est ""
+    tab.pop()
+
+    // Boucle sur le tableau des score, avec incrémentation de la somme
+    for(i=0; i<(tab.length); i++){
+        if(tab[i] > max){
+            max = tab[i]
+        }
+        sum = sum + tab[i]
+    }
+
+    // Calcul de la moyenne
+    let moy = sum / (tab.length)
+
+    alert("Le score le plus elevé est " + max + " et la moyenne est " + moy)
+
+}
+
     
 
 
