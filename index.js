@@ -112,6 +112,76 @@ function exo2(){
     
 }
 
+function exo3(){
+
+    // Saisir le mot de passe
+    let mdp = prompt("Saisir le mot de passe")
+
+    // Le convertir en tableau
+    tabMdp = mdp.split('');
+
+    // Declarer les conditions
+    let taille = new Boolean(false)
+    let maj = new Boolean(false)
+    let min = new Boolean(false)
+    let num = new Boolean(false)
+
+    if(tabMdp.length >= 8){
+        taille = true
+    }
+
+    // Creer des tableau alphabet minuscule et majuscule
+    tabMin = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    tabMaj = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    tabNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+
+
+    // Boucler sur le mot de passe et comparer avec les lettres en minuscule et en majuscule, puis les chiffres pour savoir si il y a des correspondances
+    // Si le mot de passe contient une minuscule : le boolean min devient true
+    // Si le mot de passe contient une majuscule : le boolean maj devient true
+    // Si le mot de passe contient un chiffre : le boolean num devient true
+    for(i=0; i<tabMdp.length; i++){
+        for(j=0; j<26; j++){
+            if(tabMdp[i] == tabMin[j]){
+                min = true
+            }
+
+            if(tabMdp[i] == tabMaj[j]){
+                maj = true
+            }
+        }
+
+        for(k=0; k<11; k++){
+            if(tabMdp[i] == tabNum[k]){
+                num = true
+            }
+        }
+    }
+
+    // Si une des conditions n'est pas respectée, le mot de passe est faux
+    // On indique ensuite quelle conditions n'est pas remplie
+    if(num == true && min == true && maj == true && taille == true){
+        alert("Le mot de passe est valide")
+    } else {
+        alert("Le mot de passe n'est pas valide")
+        if(num == false){
+            alert("Il manque un chiffre")
+        }
+
+        if(min == false){
+            alert("Il manque une minuscule")
+        }
+
+        if(maj == false){
+            alert("Il manque une majuscule")
+        }
+
+        if(taille == false){
+            alert("Il faut qu'il fasse au moins 8 caractères")
+        }
+    }
+}
+
     
 
 
