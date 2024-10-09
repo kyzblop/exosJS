@@ -1,0 +1,12 @@
+.exo{
+    border-bottom: solid 1px black ;
+    padding: 20px;
+}
+
+.boutonExe{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-end;
+}
+
